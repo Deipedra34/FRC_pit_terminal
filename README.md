@@ -1,9 +1,9 @@
 <p align="center">
-  <img src="./assets/photo-3.jpg" alt="FRC Pit Terminal running" width="70%">
+  <img src="./photo-3.jpg" alt="FRC Pit Terminal running" width="70%">
 </p>
 <p align="center">
-  <img src="./assets/photo-1.jpg" alt="FRC Pit Terminal enclosure" width="34%">
-  <img src="./assets/photo-2.jpg" alt="FRC Pit Terminal side view" width="34%">
+  <img src="./photo-1.jpg" alt="FRC Pit Terminal enclosure" width="34%">
+  <img src="./photo-2.jpg" alt="FRC Pit Terminal side view" width="34%">
 </p>
 
 <p align="center">
