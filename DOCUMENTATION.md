@@ -7,6 +7,7 @@ Detailed hardware, software, and troubleshooting reference for the FRC Pit Termi
 - [Purpose](#purpose)
 - [Wiring - OLED Display](#wiring---oled-display)
 - [Wiring - Buzzer](#wiring---buzzer)
+- [Enclosure & Assembly](#enclosure--assembly)
 - [Software Setup](#software-setup)
 - [First Boot Flow](#first-boot-flow)
 - [Changing Settings Later](#changing-settings-later)
@@ -100,6 +101,19 @@ A fatal esptool.py error occurred: Failed to connect to ESP8266: Timed out waiti
 ```
 
 D1 (GPIO5) has no such restriction and is otherwise unused in this project, so it's the safe choice. If you switch the OLED to I2C wiring (which frees D0/D5/D7/D8), you can move the buzzer to any of those except D8.
+
+---
+
+## Enclosure & Assembly
+
+If you're 3D printing an enclosure for the terminal, here's the hardware and fastening approach used for the version pictured in the README:
+
+- **Screws:** M2, 4mm length
+- **Nuts:** M2 hex nuts, heat-set into the printed plastic rather than left as loose fasteners
+- **Heat-setting method:** a soldering iron is used to melt each nut into its recess after printing - the iron tip presses the nut down flush while it softens the surrounding plastic, which then cools and grips the nut's hex flats
+- **Nut trap sizing:** the hexagonal recesses in the CAD model are intentionally undersized relative to the nut's actual dimensions. This is deliberate, not a printing error - a slightly tight fit gives the heat-set nut something to bite into as it melts in, resulting in a much stronger hold than a recess sized to the nut's exact dimensions (which would leave the nut loose once the plastic cools)
+
+This approach is a common practice for 3D-printed enclosures that need to be opened and closed repeatedly (e.g. to access the ESP8266's USB port) without stripping the plastic threads a screw would otherwise cut directly into.
 
 ---
 
