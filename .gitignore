@@ -1,0 +1,18 @@
+# Arduino IDE
+*.hex
+*.elf
+*.bin
+build/
+*.tmp
+
+# Arduino IDE 2.x sketch cache
+.vscode/
+sketch.yaml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*~
