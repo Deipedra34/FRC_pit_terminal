@@ -42,7 +42,7 @@
 #include <LittleFS.h>
 #include <WiFiManager.h>
 
-// ---------------------------- DEF. VALUES (used on first boot) ----------------------------------
+// -------------------- DEF. VALUES (used on first boot) ----------------------------
 String cfgTbaKey    = "";
 String cfgEventKey  = "";
 String cfgTeamName  = "GOLDEN HORN";
@@ -51,7 +51,7 @@ const char* TBA_TEAM_KEY = "frc8159";
 long utcOffsetSeconds = 3 * 3600; // starting value (Istanbul)(!auto updated once IP based detection runs!)
 unsigned long lastTzFetch = 0;
 const unsigned long TZ_FETCH_INTERVAL = 30UL * 60UL * 1000UL; // re check every 30 minutes
-// ---------------------------------------------------------------------------------------------------------------------------------
+// -----------------------------------------------------------------------------------------------------------------------------
 
 U8G2_SSD1306_128X64_NONAME_F_4W_SW_SPI u8g2(
   U8G2_R0, /*clock=*/D5, /*data=*/D7, /*cs=*/U8X8_PIN_NONE, /*dc=*/D8, /*reset=*/D0
@@ -75,7 +75,7 @@ String lastMatchLine2 = "";
 const int BUZZER_PIN = D1; // active buzzer (D4/GPIO2 avoided its a boot strapping pin)
 int lastKnownMatchNumber = -1; // used to detect a newly announced match
 
-// -------------------------- FORWARD DECLARATIONS ---------------------------------
+// -------- FORWARD DECLARATIONS --------------------------
 void drawMessage(const char* line1, const char* line2, const char* line3 = "");
 void drawTeamScreen();
 void drawClockScreen();
@@ -86,7 +86,7 @@ void fetchNextMatch();
 void fetchTimezone();
 void beep(int times, int durationMs = 120);
 
-// ------------------------------ CONFIG FILE (LittleFS) ----------------------------
+// ----------------------------- CONFIG FILE (LittleFS) -------------------
 
 void loadConfig() {
   if (!LittleFS.begin()) return;
@@ -115,7 +115,7 @@ void saveConfig() {
   f.close();
 }
 
-// --------------------------------- WEB SETTINGS PAGE ---------------------------------
+// --------------------------------- WEB SETTINGS PAGE --------------------------
 
 void handleRoot() {
   String html = "<html><head><meta name='viewport' content='width=device-width, initial-scale=1'>"
@@ -178,7 +178,7 @@ void handleWifiReset() {
   ESP.restart();
 }
 
-// ----------------- SETUP / LOOP -----------------------
+// ----------------- SETUP / LOOP ---------------
 
 void setup() {
   Serial.begin(115200);
@@ -256,7 +256,7 @@ void loop() {
   delay(100);
 }
 
-// ------------------------ SCREEN DRAWING -------------------------
+// ------------------------ SCREEN DRAWING ----------
 
 void drawTeamScreen() {
   u8g2.clearBuffer();
@@ -320,7 +320,7 @@ void drawMessage(const char* line1, const char* line2, const char* line3) {
   u8g2.sendBuffer();
 }
 
-// -------------------- TBA API --------------------------
+// -------------------- TBA API ------------
 
 void fetchNextMatch() {
   if (cfgTbaKey.length() == 0 || cfgEventKey.length() == 0) {
@@ -456,7 +456,7 @@ void fetchTimezone() {
   http.end();
 }
 
-// ----- BUZZER -----
+// --- BUZZER -----
 
 void beep(int times, int durationMs) {
   for (int i = 0; i < times; i++) {
